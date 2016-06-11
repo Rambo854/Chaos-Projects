@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+<title>Activity 1</title>
+</head>
+
+<body>
+<form name="inputform" method="post" action="">
+<table>
+	<tr>
+		<td>Enter money from bike sale</td>
+		<td><input type="text" name="BikeMoney"></td>
+	</tr>
+	
+	<tr>
+		<td>Enter money from TV sale</td>
+		<td><input type="text" name="TVMoney"></td>
+	</tr>
+	
+	<tr>
+		<td>Enter money from iPod sale</td>
+		<td><input type="text" name="iPodMoney"></td>
+	</tr>
+	
+	<tr>
+		<td>Enter the price of the car</td>
+		<td><input type="text" name="CarPrice"></td>
+	</tr>
+	
+	<tr>
+		<td></td>
+		<td><input type="submit" value="Submit Details" onclick=validateform()></td>
+	</tr>
+</table>
+</form>
+</body>
+
+<script type="text/javascript">
+function validateform()
+{
+	var theElement;
+	var	Counter;
+	var okFlag="OK";
+	theElement=document.getElementsByTagName('input');
+	for(Counter=0; Counter<theElement.length; Counter++)
+	{
+		switch(theElement[Counter].value)
+		{
+			case "submit":
+				break;
+			
+			default:
+				if(isNaN(theElement[Counter].value))
+				{
+					alert("You need to enter a number into " + theElement[Counter].name);
+					
+					okFlag="NotOK";
+				}
+		}
+	}
+	if(okFlag=="OK")
+	{
+		totalAmount=parseFloat(theElement[0].value) + parseFloat(theElement[1].value) + parseFloat(theElement[2].value);
+		alert("You have earnt " + totalAmount + " and need to pay" + theElement[3].value + " for the car");
+	}
+}
+</script>
+
+</html>

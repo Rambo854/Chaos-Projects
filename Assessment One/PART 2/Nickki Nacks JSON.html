@@ -1,0 +1,231 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<h5> Nikki Nacks Products</h4>
+	<title> Nikki Nacks</title>
+</head>
+
+<!--  style="color:black;" -->
+<!-- style="font-family:courier" -->
+<!-- style="text-align:center" -->
+<!-- style="font-size:50px" -->
+<!-- style="background-color:yellow" -->
+<!-- style="text-align:center" -->
+<!-- alert("I am an alert box!"); -->
+
+<h2> 
+<img src="nikkinaksLogo.png" style="float:left;width:187.5px;height:75px;">
+</h2>
+
+<body>
+	<h4>Please select a type of product</h4>
+	<button onclick = "musicFunction()">Music</button> 
+	<button onclick = "moviesFunction()">Movies</button>
+
+	<div id="data"></div>
+
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>	
+
+<script>					
+function musicFunction()
+{
+	$.getJSON
+	(
+		'songs.json', function(data)							
+		{
+			var output="<form>";
+			output+="<table name='songsTable'><h3>Songs</h3>";
+			
+			for (var i in data.products)
+			{
+				output+="<tr>";
+					output+="<td>"
+						+"<input type='checkbox' onclick='checkBOX(this)' id='" + i +"' name='sbox" + i +"' />" 
+						+  data.products[i].productId 
+						+ ".) "
+						+ data.products[i].productName
+						+ "</td>" 
+					
+					output+=
+						"<td>" 
+							+ data.products[i].productType 
+							+ " -------  Released: "
+							+ data.products[i].newRelease
+							+ "</td>";
+					output+=
+						"<td>" 		
+							+ "$" 
+							+ data.products[i].productPrice
+							+ "</td>";
+					output+=
+						"<td>"		
+							+ "<select id='Quantity" + i +"' name='Quantity" + i +"' disabled=true>"
+							+ "<option value='one' selected='selected'>1</option>" 
+							+ "<option value='two'>2</option>"
+							+ "<option value='three'>3</option>"
+							+ "<option value='four'>4</option>"
+							+ "<option value='five'>5</option>"
+							+ "<option value='six'>6</option>"
+							+ "<option value='seven'>7</option>"
+							+ "<option value='eight'>8</option>"
+							+ "<option value='four'>9</option>"
+							+ "<option value='nine'>10</option></select>"
+							+ "</td>";
+				output+="</tr>";
+			}	
+			output+="</table>";
+			output+="</form>";
+			output+="<button onclick = 'getSongQuote()'>Get Quote</button>"
+			document.getElementById("data").innerHTML=output; 
+		}
+	);
+}
+function checkBOX(sbox)
+{
+	if (document.getElementById("Quantity" + sbox.id).disabled)
+	{
+		document.getElementById("Quantity" + sbox.id).disabled = false;
+	}
+	else
+	{
+		document.getElementById("Quantity" + sbox.id).disabled = true;
+	}
+}
+
+function getSongQuote()
+{
+	$.getJSON
+	(
+		'songs.json', function(data)
+		{
+			var output="<form>";
+			output+="<table name='songsQuote'><h3>Your Quote</h3>";
+			
+			for (var i in data.products)
+			{
+				if (document.getElementById("Quantity" + sbox.id).disabled = false)
+				{
+					output+="<tr>";
+							output+="<td>"
+								+ data.products[i].productName
+								+ "</td>" 
+							output+=
+								"<td>" 		
+									+ "$" 
+									+ data.products[i].productPrice
+									+ "</td>";
+						output+="</tr>";
+				}
+			}
+			
+			output+="</table>";
+			output+="</form>";
+			output+="<button onclick = 'window.print()'>Print Quote</button>"
+			document.getElementById("data").innerHTML=output;
+		}
+	);
+}
+</script>
+
+<script>
+function moviesFunction()
+{
+	$.getJSON
+	(
+		'films.json', function(data)
+		{
+			var output="<form>";
+			output+="<table name='moviesTable'><h3>Movies</h3>";
+			
+			for (var i in data.products)
+			{
+				output+="<tr>";
+					output+="<td>"
+						+"<input type='checkbox' onclick='checkBOX(this)' id='" + i +"' name='mbox" + i +"' />" 
+						+  data.products[i].productId 
+						+ ".) "
+						+ data.products[i].productName
+						+ "</td>" 
+					
+					output+=
+						"<td>" 
+							+ data.products[i].productType 
+							+ " -------  Released: "
+							+ data.products[i].newRelease
+							+ "</td>";
+					output+=
+						"<td>" 		
+							+ "$" 
+							+ data.products[i].productPrice
+							+ "</td>";
+					output+=
+						"<td>"		
+							+ "<select id='Quantity" + i +"' name='Quantity" + i +"' disabled=true>"
+							+ "<option value='one' selected='selected'>1</option>" 
+							+ "<option value='two'>2</option>"
+							+ "<option value='three'>3</option>"
+							+ "<option value='four'>4</option>"
+							+ "<option value='five'>5</option>"
+							+ "<option value='six'>6</option>"
+							+ "<option value='seven'>7</option>"
+							+ "<option value='eight'>8</option>"
+							+ "<option value='four'>9</option>"
+							+ "<option value='nine'>10</option></select>"
+							+ "</td>";
+				output+="</tr>";
+			}
+			
+			output+="</table>";
+			output+="</form>";
+			output+="<button onclick = 'getFilmQuote()'>Get Quote</button>"
+			document.getElementById("data").innerHTML=output;
+		}
+	);
+}
+
+function checkBOX(mbox)
+{
+	if (document.getElementById("Quantity" + mbox.id).disabled)
+	{
+		document.getElementById("Quantity" + mbox.id).disabled = false;
+	}
+	else
+	{
+		document.getElementById("Quantity" + mbox.id).disabled = true;
+	}
+}
+function getFilmQuote()
+{
+	$.getJSON
+	(
+		'films.json', function(data)
+		{
+			var output="<form>";
+			output+="<table name='moviesQuote'><h3>Your Quote</h3>";
+			
+			for (var i in data.products)
+			{
+				output+="<tr>";
+					output+="<td>"
+						+ data.products[i].productName
+						+ "</td>" 
+					output+=
+						"<td>" 		
+							+ "$" 
+							+ data.products[i].productPrice
+							+ "</td>";
+				output+="</tr>";
+			}
+			
+			output+="</table>";
+			output+="</form>";
+			output+="<button onclick = 'window.print()'>Print Quote</button>"
+			document.getElementById("data").innerHTML=output;
+		}
+	);
+}
+</script>
+
+</body>
+</html>

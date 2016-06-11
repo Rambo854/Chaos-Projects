@@ -1,0 +1,7 @@
+Things to do:
+- only ticked checkboxes go through to the next screen (Your quote page)
+- There're three screens, movies, songs, and your quote.
+- need to go quote screen through "Get Quote" button
+- need multiply the price with no. of copies
+- need to add total of all chosen products
+- need to be able to print it

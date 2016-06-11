@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title> Tables </title>
+	
+</head>
+
+<body>
+
+<p>These are components of a form </p>
+
+<!-- Spaces are required <input type="radio" /> -->
+
+<!-- Radio Buttons: <input type="radio" /> Allows user to select only one of a limited number of choices -->
+<form>
+	<input type="radio" name="sex" value="male" /> Male<br />
+	<input type="radio" name="sex" value="female" /> Female
+</form>
+
+<!-- Password Field -->
+<form action="">
+	<label> Username: </label> <input type="text" name="user" /><br />
+	Password: <input type="password" name="password" />
+</form>
+
+<!-- Checkboxes: <input type="checkbox" /> Allows user to select one or more options of a limited number of choices -->
+<form>
+	<input type="checkbox" name="vehicle" value="Bike" /> I have a bike<br />
+	<input type="checkbox" name="vehicle" value="Car" /> I have a car
+</form>
+
+<!-- Submit Button: <input type="submit" /> Used to send form data to a server -->
+<form name="input" action="html_form_action.asp" method="get">
+	Username: <input type="text" name="user" />
+	<input type="submit" value="Submit" />
+</form>
+
+<!-- Drop Down List -->
+<form action="">
+<select name="cars">
+<option value="volvo">Volvo</option>
+<option value="saab">Saab</option>
+<option value="fiat" selected="selected">Fiat</option>
+<option value="audi">Audi</option>
+</select>
+</form>
+
+<!-- Send a Email from a form -->
+<h3>Send e-mail to someone@example.com:</h3>
+<form action="<ahref="mailto:someone@example.com">MAILTO:someone@example.com"
+<method="post" enctype="text/plain">
+Name:<br />
+<input type="text" name="name" value="your name" /><br />
+E-mail:<br />
+<input type="text" name="mail" value="your email" /><br />
+Comment:<br />
+<input type="text" name="comment" value="your comment" size="50" />
+<input type="submit" value="Send">
+<input type="reset" value="Reset">
+
+</body>
+</html>

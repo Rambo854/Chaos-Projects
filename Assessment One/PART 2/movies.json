@@ -1,0 +1,47 @@
+{
+	"products":[
+	{
+		"productId": "001",
+		"productName": "Oblivion",
+		"productType": "Movie",
+		"newRelease": true,
+		"productPrice": 6.50
+	},
+	{
+		"productId": "002",
+		"productName": "Iron Man 3",
+		"productType": "Movie",
+		"newRelease": true,
+		"productPrice": 6.50
+	},
+	{
+		"productId": "003",
+		"productName": "Monty Python's Meaning of Life",
+		"productType": "Movie",
+		"newRelease": false,
+		"productPrice": 2.00
+	},
+	{
+		"productId": "004",
+		"productName": "Star Trek into Darkness",
+		"productType": "Movie",
+		"newRelease": true,
+		"productPrice": 6.50
+	},
+	{
+		"productId": "005",
+		"productName": "iRobot",
+		"productType": "Movie",
+		"newRelease": false,
+		"productPrice": 3.50
+	},
+	{
+		"productId": "006",
+		"productName": "Star Wars: the Force Awakens",
+		"productType": "movie",
+		"newRelease": true,
+		"productPrice": 36.50
+	}
+
+	]
+}

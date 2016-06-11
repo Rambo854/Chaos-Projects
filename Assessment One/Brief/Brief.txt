@@ -1,0 +1,27 @@
+Clients call and request songs/music
+
+credit details taken over phone
+
+items emailed to them directly
+
+	To use a program to locate and download the songs and music of choice
+	
+	display options to customer, allow them to select their items of choice and obtain a quote
+		
+			for clients to save their quote as a text file
+
+	a list of items to include in the new system is given
+	
+	provide the inputs/outputs/processes
+	
+	provide clear recognisable variable names (Some might be already provided)
+	
+	An interface design is given to you to annotate how the program works between interface and code
+	
+	provide as deliverables for this task the technical docu template
+	
+	supply the pseudo Code and flowcharts
+	
+	The algorithm is then to be tested using a trace table or desk check
+	
+	
